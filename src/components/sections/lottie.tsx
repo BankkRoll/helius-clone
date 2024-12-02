@@ -2,27 +2,29 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
-import lottie from "lottie-web";
-
 export default function LottieWithFallback() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isLottieLoaded, setLottieLoaded] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== "undefined" && containerRef.current) {
-      const animation = lottie.loadAnimation({
-        container: containerRef.current,
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-        path: "/lottie.json",
+    if (typeof window !== "undefined") {
+      import("lottie-web").then((lottie) => {
+        if (containerRef.current) {
+          const animation = lottie.default.loadAnimation({
+            container: containerRef.current,
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            path: "/lottie.json",
+          });
+
+          animation.addEventListener("DOMLoaded", () => setLottieLoaded(true));
+
+          return () => {
+            animation.destroy();
+          };
+        }
       });
-
-      animation.addEventListener("DOMLoaded", () => setLottieLoaded(true));
-
-      return () => {
-        animation.destroy();
-      };
     }
   }, []);
 
