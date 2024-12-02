@@ -4,15 +4,15 @@ export const defaultSEO: DefaultSeoProps = {
   title: "Helius - Solana's Leading RPC & API Platform",
   description:
     "Solana RPCs, APIs, webhooks and infrastructure to build and ship crypto apps, fast. Get started for free in 1 click.",
-  canonical: "https://bankk-helius.vercel.app/",
+  canonical: "https://helius-cloned-bankk.vercel.app/",
   openGraph: {
     type: "website",
     locale: "en_IE",
-    url: "https://bankk-helius.vercel.app/",
+    url: "https://helius-cloned-bankk.vercel.app/",
     siteName: "Helius",
     images: [
       {
-        url: "https://bankk-helius.vercel.app/og.png",
+        url: "https://helius-cloned-bankk.vercel.app/og.png",
         width: 1200,
         height: 630,
         alt: "Helius",
