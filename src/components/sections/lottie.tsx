@@ -9,7 +9,7 @@ export default function LottieWithFallback() {
   const [isLottieLoaded, setLottieLoaded] = useState(false);
 
   useEffect(() => {
-    if (containerRef.current) {
+    if (typeof window !== "undefined" && containerRef.current) {
       const animation = lottie.loadAnimation({
         container: containerRef.current,
         renderer: "svg",
