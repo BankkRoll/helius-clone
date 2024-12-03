@@ -17,8 +17,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="google-site-verification" content="i27pz0PBgfFQh7YDh2n3cL6tIND7Fxnmp_YGwankKZs" />
       </Head>
-<meta name="google-site-verification" content="i27pz0PBgfFQh7YDh2n3cL6tIND7Fxnmp_YGwankKZs" />
+
       <DefaultSeo {...defaultSEO} titleTemplate={`%s | Helius`} />
 
       <ThemeProvider
