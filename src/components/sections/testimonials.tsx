@@ -167,7 +167,7 @@ export function TestimonialCarousel() {
       <div className="max-w-[1300px] mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={isInView ? "visible" : "hidden"}
           transition={{ duration: 0.5 }}
           className="text-4xl md:text-5xl font-bold text-center text-white mb-12"
         >
@@ -198,7 +198,7 @@ export function TestimonialCarousel() {
               : "opacity-50 scale-90"
           }`}
                 >
-                  <div className="bg-zinc-900/30 border border-zinc-800 rounded-lg p-6 md:p-8">
+                  <div className="bg-zinc-900/30 border border-zinc-800 rounded-lg min-h-[38rem] md:min-h-72 p-6 md:p-8 items-center m-auto flex">
                     <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center text-center md:text-left">
                       <div className="sm:w-1/3 flex flex-col items-center md:items-start text-center md:text-left">
                         <div className="w-20 h-20 relative z-10 mb-4">
@@ -231,7 +231,7 @@ export function TestimonialCarousel() {
           <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background to-transparent"></div>
           <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background to-transparent"></div>
         </div>
-        <div className="flex justify-center gap-4">
+        <div className="flex justify-center gap-4 pt-4">
           <Button
             variant="outline"
             size="icon"
